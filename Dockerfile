@@ -45,6 +45,9 @@ COPY docker_config/archivesspace/scripts /apps/aspace/scripts
 # # Copy Solr files into /apps/aspace/archivesspace/solr, for Solr checksum verification
 COPY docker_config/solr/conf /apps/aspace/archivesspace/solr
 
+# # Copy modified WAR files
+# COPY docker_config/wars /apps/aspace/archivesspace/wars
+
 RUN groupadd -g 1000 aspace && \
     useradd -l --create-home --uid 1000 --gid aspace aspace && \
     chown -R aspace:aspace /apps

@@ -1,6 +1,6 @@
 # THESE ARE THE VERSIONS OF PLUGINS
 # URL VERSION [NAME]
-https://github.com/umd-lib/umd-lib-aspace-theme.git 1.4.3
+#https://github.com/umd-lib/umd-lib-aspace-theme.git 1.4.3
 https://github.com/lyrasis/aspace-oauth.git dd4ac72f8fbedf612a52b58feeeb5ddbc078fc9d
 https://github.com/hudmol/payments_module.git 5fddd44caf2002ba34578e1eead7fb9efb83cdee
 https://github.com/umd-lib/aspace_yale_accessions.git 1.1-umd-0.4

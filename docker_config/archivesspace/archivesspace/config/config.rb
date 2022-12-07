@@ -103,8 +103,7 @@ AppConfig[:solr_url] = ENV['ASPACE_SOLR_URL']
 AppConfig[:plugins] = ['local', 'aspace_feedback', 'lcnaf', 'payments_module',
                        'aspace-oauth',
                        'aspace_yale_accessions', 'default_text_for_notes',
-                       'and_search', 'digitization_work_order',
-                       'umd-lib-aspace-theme']
+                       'and_search', 'digitization_work_order']
 
 unless ENV['DISABLE_AEON_REQUEST'] == 'true'
   AppConfig[:plugins] << 'aeon_fulfillment' << 'umd_aeon_fulfillment'
@@ -289,8 +288,8 @@ AppConfig[:public_proxy_url] = "#{ENV['PUBLIC_INTERFACE_PROXY_URL']}"
 ##
 #AppConfig[:backend_instance_urls] = proc { [AppConfig[:backend_url]] }
 #
-#AppConfig[:frontend_theme] = "default"
-AppConfig[:public_theme] = 'umd-lib-aspace-theme'
+AppConfig[:frontend_theme] = "default"
+#AppConfig[:public_theme] = 'umd-lib-aspace-theme'
 #
 ## Sessions marked as expirable will timeout after this number of seconds of inactivity
 #AppConfig[:session_expire_after_seconds] = 3600

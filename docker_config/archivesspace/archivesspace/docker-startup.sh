@@ -6,4 +6,6 @@ if [[ "$?" != 0 ]]; then
   exit 1
 fi
 
+export ASPACE_INITIALIZE_PLUGINS=aspace-oauth
+
 exec /apps/aspace/archivesspace/archivesspace.sh

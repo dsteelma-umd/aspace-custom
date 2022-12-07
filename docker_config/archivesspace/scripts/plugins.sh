@@ -44,3 +44,24 @@ for gemfile in $(find /apps/aspace/archivesspace/plugins/ -maxdepth 2 -name Gemf
     /apps/aspace/archivesspace/scripts/initialize-plugin.sh "$plugin"
 done
 
+# Replace Gemfile.lock version for the following gems, to match those specified
+# in archivesspace/archivesspace/Gemfile.lock file
+echo --- FOOBARBAZ!!!! ----
+# for gemfile_lock in $(find /apps/aspace/archivesspace/plugins/ -maxdepth 2 -name 'Gemfile.lock'); do
+#   echo Updating Gemfile.lock in: "$gemfile_lock"
+#   sed -i 's/public_suffix (4.0.7)/public_suffix (4.0.6)/g' "$gemfile_lock"
+#   sed -i 's/addressable (2.8.1)/addressable (2.7.0)/g' "$gemfile_lock"
+#   sed -i 's/public_suffix (>= 2.0.2, < 6.0)/public_suffix (>= 2.0.2, < 5.0)/g' Gemfile.lock
+#   plugin=$(basename $(dirname $gemfile))
+#   /apps/aspace/archivesspace/scripts/initialize-plugin.sh "$plugin"
+# done
+
+gemfile_lock='/apps/aspace/archivesspace/plugins/aspace-oauth/Gemfile.lock'
+if [ -f "$gemfile_lock" ]; then
+  echo Updating Gemfile.lock in: "$gemfile_lock"
+  sed -i 's/public_suffix (4.0.7)/public_suffix (4.0.6)/g' "$gemfile_lock"
+  sed -i 's/addressable (2.8.1)/addressable (2.8.0)/g' "$gemfile_lock"
+  sed -i 's/public_suffix (>= 2.0.2, < 6.0)/public_suffix (>= 2.0.2, < 5.0)/g' "$gemfile_lock"
+  plugin=$(basename $(dirname $gemfile_lock))
+  /apps/aspace/archivesspace/scripts/initialize-plugin.sh "$plugin"
+fi
