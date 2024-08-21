@@ -205,6 +205,8 @@ unless ENV['DISABLE_AEON_REQUEST'] == 'true'
   }
 end
 
+AppConfig[:pui_enable_staff_link] = false
+
 AppConfig[:pui_page_actions_request] = false
 
 AppConfig[:pui_hide][:accessions] = true
